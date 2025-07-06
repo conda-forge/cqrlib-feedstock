@@ -3,5 +3,5 @@
 cmake ${CMAKE_ARGS} "${SRC_DIR}"
 
 cmake --build .
-ctest
+test "${CONDA_BUILD_CROSS_COMPILATION}" != "1" && ctest
 cmake --install .
