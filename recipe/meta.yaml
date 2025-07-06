@@ -15,7 +15,7 @@ build:
   ignore_run_exports_from:
     - {{ compiler('cxx') }}
     - {{ stdlib('c') }}      # [win]
-  number: 0
+  number: 1
 
 requirements:
   build:
