@@ -1,6 +1,6 @@
 --- CMakeLists.txt
 +++ CMakeLists.txt
-@@ -0,0 +1,142 @@
+@@ -0,0 +1,143 @@
 +# ${CMAKE_COMMAND} -E rm was introduced in CMake 3.17.
 +cmake_minimum_required(VERSION 3.17)
 +project(CQRlib
@@ -29,7 +29,8 @@
 +# quite different from SOVERSION.
 +option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 +add_library(CQR
-+  "cqrlib.c")
++  "cqrlib.c"
++  "cqrlib.def")
 +set_target_properties(CQR PROPERTIES
 +  OUTPUT_NAME "CQRlib"
 +  PUBLIC_HEADER "cqrlib.h"
@@ -149,6 +150,51 @@
 +@PACKAGE_INIT@
 +
 +include("${CMAKE_CURRENT_LIST_DIR}/CQRlibTargets.cmake")
+--- cqrlib.def
++++ cqrlib.def
+@@ -0,0 +1,42 @@
++EXPORTS
++	CQRAdd
++	CQRAngles2Quaternion
++	CQRAxis2Quaternion
++	CQRConjugate
++	CQRCreateEmptyQuaternion
++	CQRCreateQuaternion
++	CQRDist
++	CQRDistsq
++	CQRDivide
++	CQRDot
++	CQRDoublePower
++	CQREqual
++	CQRExp
++	CQRFreeQuaternion
++	CQRGetQuaternionAngle
++	CQRGetQuaternionAxis
++	CQRGetQuaternionIm
++	CQRGetQuaternionW
++	CQRGetQuaternionX
++	CQRGetQuaternionY
++	CQRGetQuaternionZ
++	CQRHLERP
++	CQRHLERPDist
++	CQRIntegerPower
++	CQRIntegerRoot
++	CQRInverse
++	CQRLog
++	CQRMatrix2Quaternion
++	CQRMultiply
++	CQRNorm
++	CQRNormsq
++	CQRPoint2Quaternion
++	CQRQuaternion2Angles
++	CQRQuaternion2Matrix
++	CQRQuaternionPower
++	CQRRotateByQuaternion
++	CQRSLERP
++	CQRSLERPDist
++	CQRScalarMultiply
++	CQRSetQuaternion
++	CQRSubtract
 --- redirect.cmake
 +++ redirect.cmake
 @@ -0,0 +1,10 @@
