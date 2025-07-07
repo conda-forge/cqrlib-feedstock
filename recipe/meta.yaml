@@ -15,15 +15,15 @@ build:
   ignore_run_exports_from:
     - {{ compiler('cxx') }}
     - {{ stdlib('c') }}      # [win]
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ stdlib('c') }}
-    - cmake >=3.17,<4
-    - make             # [unix]
+    - cmake >=3.17
+    - make          # [unix]
 
 test:
   commands:
