@@ -22,8 +22,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ stdlib('c') }}
-    - cmake >=3.17,<4
-    - make             # [unix]
+    - cmake >=3.17
+    - make          # [unix]
 
 test:
   commands:
